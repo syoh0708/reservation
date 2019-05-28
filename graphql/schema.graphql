@@ -1,0 +1,22 @@
+type Reservation {
+    user_id: Int
+    room_id: Int
+    room_name: String
+    department: String
+    time: Int
+}
+
+type MeetingRoom {
+    room_id: Int
+    room_name: String
+    size: String
+}
+
+type Query {
+    reservations: [Reservation]
+    getVacantRoom(time: String!): [MeetingRoom]
+}
+
+type Mutation {
+    makeReservation(user_id: Int!, room_id: Int!, reservation_time: String!): String!
+}
